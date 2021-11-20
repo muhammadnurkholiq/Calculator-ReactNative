@@ -1,21 +1,23 @@
 import React from "react";
-import { StyleSheet, TextInput, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { Box, Text } from "native-base";
 
 export default function Result({result, setResult}) {
 
     return (
         <>
-            <TextInput value={result} style={output.txtInput} placeholder="0" editable={false} selectTextOnFocus={false} />
-            
+            <Box style={output.txtInput} >
+                <Text style={output.text}>{result}</Text>
+            </Box>
+
             <View style={output.buttons}>
                 <TouchableOpacity style={output.btnClear} onPress={() => setResult(0)}>
-                    <Text style={output.text}>Clear</Text>
+                    <Text style={output.text1}>Clear</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={output.btnDel}>
-                    <Text style={output.text}>Del</Text>
+                <TouchableOpacity style={output.btnDel} onPress={() => setResult(result.slice(1))}>
+                    <Text style={output.text1}>Del</Text>
                 </TouchableOpacity>
             </View>
-        
         </>
     );
 }
@@ -23,17 +25,20 @@ export default function Result({result, setResult}) {
 const output = StyleSheet.create({
     txtInput: {
         backgroundColor: 'white',
-        padding: 10,
         borderRadius: 20,
-        marginTop: 30,
-        height: '45%',
+        marginTop: 90,
+        padding: 10 ,
         textAlign: 'center',
         fontSize: 30,
         fontWeight: '700',
-        color: 'black'
+        color: 'black',
+        alignItems: 'center',
+        alignContent: 'center',
+        height: 75,
+        marginBottom: 10
     },
     buttons: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     btnClear: {
         backgroundColor: '#930707',
@@ -58,6 +63,11 @@ const output = StyleSheet.create({
         alignContent: 'center'
     },
     text : {
+        color: 'black',
+        fontSize: 40,
+        fontWeight: '700'
+    },
+    text1 : {
         color: 'white',
         fontSize: 20,
         fontWeight: '700'

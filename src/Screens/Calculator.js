@@ -15,7 +15,6 @@ export default function Calculator() {
         } else {
             setResult(result + value);
         }   
-        console.log(setResult)
     };
 
     const calculate = () => {
@@ -75,6 +74,7 @@ const calc = StyleSheet.create({
         height: '65%',
         padding: 20,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        marginTop: 35
     }
 })

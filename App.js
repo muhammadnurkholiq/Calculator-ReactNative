@@ -1,15 +1,15 @@
 import React from "react";
-import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { NativeBaseProvider } from "native-base";
 
 // Import Components
 import Calculator from "./src/Screens/Calculator";
 
 export default function App() {
   return (
-    <View>
+    <NativeBaseProvider>
       <StatusBar style="auto" />
       <Calculator />
-    </View>
+    </NativeBaseProvider>
   );
 }
