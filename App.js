@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
 
-// Import Components
+// Import Screens
 import Calculator from "./src/Screens/Calculator";
 
 export default function App() {

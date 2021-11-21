@@ -6,9 +6,10 @@ import Buttons from "../Components/Buttons";
 import Result from "../Components/Result";
 
 export default function Calculator() {
-
+    // usestate 
     const [result, setResult] = useState(0);
 
+    // press button 
     const pressBtn = (value) => {
         if (typeof result === "number") {
             setResult(value);
@@ -17,11 +18,13 @@ export default function Calculator() {
         }   
     };
 
+    // calculate value 
     const calculate = () => {
         const calculate = eval(result);
         setResult(calculate);
     };
 
+    // calculate percent 
     const calcPercent = () => {
         const percentage = result / 100;
         setResult(percentage);
@@ -58,8 +61,9 @@ export default function Calculator() {
 
         </View>
     )
-}
+};
 
+// styling
 const calc = StyleSheet.create({
     container: {
         backgroundColor: '#FFA0A0',

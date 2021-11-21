@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { Box, Text } from "native-base";
 
 export default function Result({result, setResult}) {
-
     return (
         <>
             <Box style={output.txtInput} >
@@ -14,7 +13,7 @@ export default function Result({result, setResult}) {
                 <TouchableOpacity style={output.btnClear} onPress={() => setResult(0)}>
                     <Text style={output.text1}>Clear</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={output.btnDel} onPress={() => setResult(result.slice(1))}>
+                <TouchableOpacity style={output.btnDel} onPress={() => setResult(result.slice(0, -1))}>
                     <Text style={output.text1}>Del</Text>
                 </TouchableOpacity>
             </View>
@@ -22,6 +21,7 @@ export default function Result({result, setResult}) {
     );
 }
 
+// styling 
 const output = StyleSheet.create({
     txtInput: {
         backgroundColor: 'white',
